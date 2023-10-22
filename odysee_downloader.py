@@ -89,7 +89,7 @@ def main():
     if len(authCookieValue) == 0:
         sys.exit("No auth_token provided")
     if len(downloadDirectory) == 0:
-        print("No download directory provided. Uning default.")
+        print("No download directory provided. Using default.")
     
     # Create a headless Firefox instance
     try:
