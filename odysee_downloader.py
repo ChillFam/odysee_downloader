@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ExpectedConditions
 import time
+import sys
 import re
 
 URL = "https://odysee.com"
@@ -84,6 +85,11 @@ def download_files(driver, link):
 
 # Define the main function that calls the other functions and executes the script
 def main():
+    
+    if len(authCookieValue) == 0:
+        sys.exit("No auth_token provided")
+    if len(downloadDirectory) == 0:
+        print("No download directory provided. Uning default.")
     
     # Create a headless Firefox instance
     try:
